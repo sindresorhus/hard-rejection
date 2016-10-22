@@ -66,6 +66,12 @@ Default: `console.error`
 Custom logging function to print the rejected promise. Receives the error stack.
 
 
+## Related
+
+- [loud-rejection](https://github.com/sindresorhus/loud-rejection) - Make unhandled promise rejections fail loudly instead of the default silent fail
+- [More…](https://github.com/sindresorhus/promise-fun)
+
+
 ## License
 
 MIT © [Sindre Sorhus](https://sindresorhus.com)
