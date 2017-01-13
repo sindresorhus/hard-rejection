@@ -22,7 +22,7 @@ $ npm install --save hard-rejection
 
 ```js
 const hardRejection = require('hard-rejection');
-const promiseFn = require('promise-fn');
+const promiseFn = require('some-promise-fn');
 
 // install the handler
 hardRejection();
@@ -33,7 +33,7 @@ promiseFn();
 Without this module it's more verbose and you might even miss some that will fail silently:
 
 ```js
-const promiseFn = require('promise-fn');
+const promiseFn = require('some-promise-fn');
 
 function error(err) {
 	console.error(err.stack);
