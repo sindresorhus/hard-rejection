@@ -14,7 +14,7 @@ For command-line apps and tests, see [`loud-rejection`](https://github.com/sindr
 ## Install
 
 ```
-$ npm install --save hard-rejection
+$ npm install hard-rejection
 ```
 
 
@@ -22,25 +22,25 @@ $ npm install --save hard-rejection
 
 ```js
 const hardRejection = require('hard-rejection');
-const promiseFn = require('some-promise-fn');
+const promiseFunction = require('some-promise-fn');
 
-// install the handler
+// Install the handler
 hardRejection();
 
-promiseFn();
+promiseFunction();
 ```
 
 Without this module it's more verbose and you might even miss some that will fail silently:
 
 ```js
-const promiseFn = require('some-promise-fn');
+const promiseFunction = require('some-promise-fn');
 
-function error(err) {
-	console.error(err.stack);
+function error(error) {
+	console.error(error.stack);
 	process.exit(1);
 }
 
-promiseFn().catch(error);
+promiseFunction().catch(error);
 ```
 
 ### Register script

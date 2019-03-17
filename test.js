@@ -2,13 +2,11 @@ import test from 'ava';
 import execa from 'execa';
 
 test('main', async t => {
-	const err = await t.throwsAsync(execa('node', ['fixture.js']));
-	t.is(err.code, 1);
-	t.regex(err.stderr, /^Error: Unicorn/);
+	const error = await t.throwsAsync(execa('node', ['fixture.js']), {code: 1});
+	t.regex(error.stderr, /^Error: Unicorn/);
 });
 
 test('custom logging', async t => {
-	const err = await t.throwsAsync(execa('node', ['fixture-custom-log.js']));
-	t.is(err.code, 1);
-	t.regex(err.stdout, /^custom-log Error: Unicorn/);
+	const error = await t.throwsAsync(execa('node', ['fixture-custom-log.js']), {code: 1});
+	t.regex(error.stdout, /^custom-log Error: Unicorn/);
 });

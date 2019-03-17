@@ -3,20 +3,19 @@ const util = require('util');
 
 let installed = false;
 
-const hardRejection = log => {
+const hardRejection = (log = console.error) => {
 	if (installed) {
 		return;
 	}
 
 	installed = true;
-	log = log || console.error;
 
-	process.on('unhandledRejection', err => {
-		if (!(err instanceof Error)) {
-			err = new Error(`Promise rejected with value: ${util.inspect(err)}`);
+	process.on('unhandledRejection', error => {
+		if (!(error instanceof Error)) {
+			error = new Error(`Promise rejected with value: ${util.inspect(error)}`);
 		}
 
-		log(err.stack);
+		log(error.stack);
 		process.exit(1);
 	});
 };
