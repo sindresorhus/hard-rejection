@@ -3,7 +3,7 @@ const util = require('util');
 
 let installed = false;
 
-module.exports = log => {
+const hardRejection = log => {
 	if (installed) {
 		return;
 	}
@@ -17,6 +17,9 @@ module.exports = log => {
 		}
 
 		log(err.stack);
-		process.exit(1); // eslint-disable-line unicorn/no-process-exit
+		process.exit(1);
 	});
 };
+
+module.exports = hardRejection;
+module.exports.default = hardRejection;

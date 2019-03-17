@@ -1,5 +1,5 @@
 'use strict';
-const hardRejection = require('./');
+const hardRejection = require('.');
 
 hardRejection();
 
