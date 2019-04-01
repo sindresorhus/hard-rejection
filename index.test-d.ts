@@ -1,5 +1,5 @@
-import {expectType} from 'tsd-check';
-import hardRejection from '.';
+import {expectType} from 'tsd';
+import hardRejection = require('.');
 import './register';
 
 expectType<void>(hardRejection());

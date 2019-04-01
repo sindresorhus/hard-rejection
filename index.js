@@ -21,4 +21,5 @@ const hardRejection = (log = console.error) => {
 };
 
 module.exports = hardRejection;
+// TODO: Remove this for the next major release
 module.exports.default = hardRejection;
