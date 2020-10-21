@@ -10,6 +10,8 @@ This module exits the process with an error message right away when an unhandled
 Intended for top-level long-running processes like servers, **but not in reusable modules.**<br>
 For command-line apps and tests, see [`loud-rejection`](https://github.com/sindresorhus/loud-rejection).
 
+**With [Node.js 15](https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278), this package is moot as the default behavior then is to throw on unhandled rejections.**
+
 
 ## Install
 
